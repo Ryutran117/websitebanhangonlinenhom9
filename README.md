@@ -1,49 +1,49 @@
-# NEUSHOP - Website ban hang giao dien hien dai
+# NEUSHOP - Website bán hàng giao diện hiện đại
 
-Du an **NEUSHOP** la website thuong mai dien tu xay dung bang HTML, CSS, JavaScript thuan. Web hoat dong o phia client, giao dien responsive, de mo rong va de trien khai.
+Dự án **NEUSHOP** là website thương mại điện tử xây dựng bằng HTML, CSS, JavaScript thuần. Web hoạt động ở phía client, giao diện responsive, để mở rộng và để triển khai.
 
-## 1) Cach truy cap website
+## 1) Cách truy cập website
 
-### Cach 1: Mo truc tiep (nhanh nhat)
-1. Mo thu muc du an.
-2. Chay file `NEUSHOP.html` bang trinh duyet (Chrome, Edge, Firefox...).
+### Cách 1: Mở trực tiếp (nhanh nhat)
+1. Mở thư mục dự án.
+2. Chạy file `NEUSHOP.html` bằng trình duyệt (Chrome, Edge, Firefox…).
 
-### Cach 2: Dung Live Server (khuyen nghi khi chinh sua code)
-1. Mo thu muc du an trong VS Code.
-2. Cai extension **Live Server**.
-3. Chuot phai file `NEUSHOP.html` -> chon **Open with Live Server**.
-4. Trinh duyet se mo dia chi localhost (vi du: `http://127.0.0.1:5500/NEUSHOP.html`).
+### Cách 2: Dùng Live Server (khuyến nghị khi chỉnh sửa code)
+1. Mở thư mục dự án trong VS Code.
+2. Cài extension **Live Server**.
+3. Chuột phải vào file `NEUSHOP.html` → chọn **Open with Live Server**.
+4. Trình duyệt sẽ mở địa chỉ localhost (ví dụ: `http://127.0.0.1:5500/NEUSHOP.html`).
 
-## 2) Huong dan su dung web cho nguoi dung
+## 2) Hướng dẫn sử dụng web cho người dùng
 
-1. **Vao trang chu:** Mo `NEUSHOP.html` de xem banner, danh muc va san pham noi bat.
-2. **Xem danh sach san pham:** Bam vao menu/duong dan sang trang `products.html`.
-3. **Loc theo danh muc:** Chon danh muc de loc nhanh san pham theo nhu cau.
-4. **Tim kiem san pham:** Nhap tu khoa tren thanh tim kiem de hien ket qua phu hop.
-5. **Xem chi tiet san pham:** Bam vao tung san pham de vao trang `product-detail.html`.
-6. **Them vao gio hang:** Bam nut "Them vao gio" o the san pham hoac trong trang chi tiet.
-7. **Quan ly gio hang:** Mo khu vuc gio hang de tang/giam so luong, xoa san pham va xem tong tien.
+1. **Vào trang chủ:** Mở `NEUSHOP.html` để xem banner, danh mục và sản phẩm nổi bật.
+2. **Xem danh sách sản phẩm:** Bấm vào menu hoặc đường dẫn để sang trang `products.html`.
+3. **Lọc theo danh mục:** Chọn danh mục để lọc nhanh sản phẩm theo nhu cầu.
+4. **Tìm kiếm sản phẩm:** Nhập từ khóa trên thanh tìm kiếm để hiển thị kết quả phù hợp.
+5. **Xem chi tiết sản phẩm:** Bấm vào từng sản phẩm để vào trang `product-detail.html`.
+6. **Thêm vào giỏ hàng:** Bấm nút "Thêm vào giỏ" ở thẻ sản phẩm hoặc trong trang chi tiết.
+7. **Quản lý giỏ hàng:** Mở khu vực giỏ hàng để tăng/giảm số lượng, xóa sản phẩm và xem tổng tiền.
 
-## 3) Chuc nang chinh cua website
+## 3) Chức năng chính của website
 
-- **Trang chu hien dai:** Banner, danh muc noi bat, bo cuc than thien tren desktop va mobile.
-- **Danh sach san pham dong:** Render du lieu bang JavaScript, ho tro loc va tim kiem.
-- **Trang chi tiet san pham:** Hien thi thong tin day du cua tung san pham.
-- **Gio hang tuong tac:** Them, cap nhat so luong, xoa san pham, tinh tong tien theo thoi gian thuc.
-- **Dieu huong giua cac trang:** Home, category, products, product detail lien ket ro rang.
-- **Icon/Favicon day du:** Hien thi bieu tuong website tren tab trinh duyet.
+- **Trang chủ hiện đại:** Banner, danh mục nổi bật, bố cục thân thiện trên desktop và mobile.
+- **Danh sách sản phẩm dòng:** Render dữ liệu bằng JavaScript, hỗ trợ lọc và tìm kiếm.
+- **Trang chi tiết sản phẩm:** Hiển thị đầy đủ thông tin của từng sản phẩm.
+- **Gio hang tuong tac:** Thêm, cập nhật số lượng, xóa sản phẩm, tính tổng tiền theo thời gian thực.
+- **Điều hướng giữa các trang:** Home, category, products, product detail liên kết rõ ràng. 
+- **Icon/Favicon đầy đủ:** Hiển thị biểu tượng website trên tab trình duyệt.
 
-## 4) Cau truc file chinh
+## 4) Cấu trúc file chính
 
-- `NEUSHOP.html`: Trang chu.
-- `products.html`: Trang danh sach san pham.
-- `product-detail.html`: Trang chi tiet san pham.
-- `category.html`: Trang danh muc.
-- `script.js`: Xu ly du lieu, render san pham, tim kiem, loc, gio hang.
-- `style.css`: Toan bo giao dien va responsive.
+- `NEUSHOP.html`: Trang chủ.
+- `products.html`: Trang danh sách sản phẩm.
+- `product-detail.html`: Trang chi tiết sản phẩm.
+- `category.html`: Trang danh mục.
+- `script.js`: Xử lý dữ liệu, render sản phẩm, tìm kiếm, lọc, giỏ hàng.
+- `style.css`: Toàn bộ giao diện và responsive.
 
-## 5) Luu y khi tuy chinh
+## 5) Lưu ý khi tùy chỉnh
 
-- Du lieu san pham hien tai dang la du lieu mau trong `script.js`.
-- Co the thay the bang API that (fetch tu backend) de dua vao he thong san xuat.
-- Neu thay doi ten thuong hieu, can dong bo trong HTML va cac doan `document.title` trong JavaScript.
+- Dữ liệu sản phẩm hiện tại là dữ liệu mẫu trong `script.js`.
+- Có thể thay thế bằng API thật (fetch từ backend) để đưa vào hệ thống sản xuất.
+- Nếu thay đổi tên thương hiệu, cần đồng bộ trong HTML và các đoạn `document.title` trong JavaScript.****
