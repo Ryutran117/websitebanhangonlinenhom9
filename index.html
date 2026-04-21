@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation - NEUSHOP Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary: #2563eb;
+            --bg-dark: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        h1, h2, h3 { font-family: 'Urbanist', sans-serif; }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            padding: 4rem;
+            box-sizing: border-box;
+            position: relative;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover { background: var(--primary); }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primary);
+            z-index: 101;
+            transition: width 0.3s;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            font-family: 'Urbanist';
+            font-weight: bold;
+            opacity: 0.5;
+        }
+
+        /* Abstract Backgrounds */
+        .blob {
+            position: absolute;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.2;
+            border-radius: 50%;
+        }
+
+        /* Custom Content Styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1.5rem;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progress"></div>
+    <div class="slide-number" id="slideNum">1 / 12</div>
+
+    <!-- Blobs -->
+    <div class="blob bg-blue-600 w-[500px] h-[500px] -top-48 -right-48"></div>
+    <div class="blob bg-indigo-600 w-[400px] h-[400px] -bottom-24 -left-24"></div>
+
+    <!-- Slide 1: Title -->
+    <section class="slide active" id="slide-1">
+        <div class="text-center">
+            <div class="inline-block p-4 bg-blue-600/20 rounded-2xl mb-6">
+                <i class="fa-solid fa-shop text-5xl text-blue-500"></i>
+            </div>
+            <h1 class="text-8xl font-bold mb-4 tracking-tighter">NEU<span class="text-blue-600">SHOP</span></h1>
+            <p class="text-2xl text-slate-400 max-w-2xl mx-auto">Website Thương Mại Điện Tử Hiện Đại: Trải nghiệm mua sắm thông minh & Thanh toán VietQR</p>
+            <div class="mt-12 flex justify-center gap-4 text-sm font-medium text-slate-500">
+                <span><i class="fa-solid fa-code mr-2"></i> HTML/CSS/JS</span>
+                <span><i class="fa-solid fa-bolt mr-2"></i> Fast Performance</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Mục tiêu dự án -->
+    <section class="slide" id="slide-2">
+        <h2 class="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-6 uppercase tracking-widest">01. Mục tiêu dự án</h2>
+        <div class="grid grid-cols-2 gap-12">
+            <div class="glass-card">
+                <h3 class="text-2xl font-bold mb-4 text-blue-400">Tầm nhìn</h3>
+                <p class="text-slate-400 leading-relaxed">Xây dựng một nền tảng mua sắm tinh gọn, tập trung vào tốc độ và sự tiện lợi của khách hàng Việt Nam thông qua công nghệ quét mã QR đơn giản.</p>
+            </div>
+            <div class="glass-card">
+                <h3 class="text-2xl font-bold mb-4 text-blue-400">Trải nghiệm</h3>
+                <p class="text-slate-400 leading-relaxed">Tối ưu hóa UI/UX trên thiết bị di động, đảm bảo mọi thao tác từ tìm kiếm đến thanh toán không quá 3 bước.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Công nghệ cốt lõi -->
+    <section class="slide" id="slide-3">
+        <h2 class="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-6 uppercase">02. Công nghệ sử dụng</h2>
+        <div class="grid grid-cols-3 gap-8">
+            <div class="text-center p-8 glass-card">
+                <i class="fa-brands fa-html5 text-6xl text-orange-500 mb-6"></i>
+                <h3 class="text-xl font-bold mb-2">HTML5</h3>
+                <p class="text-sm text-slate-400">Cấu trúc chuẩn Semantic SEO</p>
+            </div>
+            <div class="text-center p-8 glass-card">
+                <i class="fa-brands fa-css3-alt text-6xl text-blue-500 mb-6"></i>
+                <h3 class="text-xl font-bold mb-2">CSS</h3>
+                <p class="text-sm text-slate-400">Giao diện Responsive & Modern</p>
+            </div>
+            <div class="text-center p-8 glass-card">
+                <i class="fa-brands fa-js text-6xl text-yellow-500 mb-6"></i>
+                <h3 class="text-xl font-bold mb-2">JavaScript (JS)</h3>
+                <p class="text-sm text-slate-400">Xử lý logic mượt mà, tốc độ cao</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Tính năng Tìm kiếm -->
+    <section class="slide" id="slide-4">
+        <div class="grid grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-8">Tìm kiếm <br><span class="text-blue-600">Thông minh</span></h2>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-bolt text-blue-500 mt-1"></i>
+                        <p><span class="font-bold block text-white">Live Search</span> Hiển thị kết quả ngay khi người dùng bắt đầu nhập liệu.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-filter text-blue-500 mt-1"></i>
+                        <p><span class="font-bold block text-white">Lọc đa năng</span> Tìm theo tên sản phẩm, thương hiệu hoặc ngành hàng.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="glass-card p-4">
+                <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                    <div class="flex items-center gap-2 bg-slate-700 p-2 rounded-lg mb-4">
+                        <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
+                        <span class="text-slate-400 text-sm italic">Sony...</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="bg-blue-600/20 p-2 rounded flex items-center gap-3">
+                            <div class="w-8 h-8 rounded overflow-hidden bg-slate-600 shrink-0">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Sony_WH-1000XM5_%28cropped%29.png/320px-Sony_WH-1000XM5_%28cropped%29.png" alt="Sony WH-1000XM5" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/64x64/1e293b/e2e8f0?text=XM5';">
+                            </div>
+                            <span class="text-xs">Sony WH-1000XM5</span>
+                        </div>
+                        <div class="p-2 flex items-center gap-3 opacity-50">
+                            <div class="w-8 h-8 rounded overflow-hidden bg-slate-600 shrink-0">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/PlayStation_5_console_and_controller.png/320px-PlayStation_5_console_and_controller.png" alt="Sony PlayStation 5" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/64x64/1e293b/e2e8f0?text=PS5';">
+                            </div>
+                            <span class="text-xs">Sony PlayStation 5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Hệ thống Giỏ hàng -->
+    <section class="slide" id="slide-5">
+        <h2 class="text-4xl font-bold mb-12 text-center">Hệ thống Giỏ hàng Real-time</h2>
+        <div class="max-w-4xl mx-auto glass-card">
+            <div class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-cart-shopping text-blue-500 text-2xl"></i>
+                    <span class="text-xl font-bold">Logic xử lý mảng (Array)</span>
+                </div>
+                <span class="bg-blue-600 px-3 py-1 rounded text-xs">Vanilla JS</span>
+            </div>
+            <p class="text-slate-400 mb-6">Mỗi khi người dùng thêm sản phẩm, hệ thống sẽ:</p>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="p-4 bg-slate-800 rounded-xl">
+                    <h4 class="text-blue-400 font-bold mb-2">1. Kiểm tra</h4>
+                    <p class="text-xs">Check xem sản phẩm đã tồn tại trong mảng chưa.</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl">
+                    <h4 class="text-blue-400 font-bold mb-2">2. Cập nhật</h4>
+                    <p class="text-xs">Tăng số lượng (qty) hoặc thêm mới vào mảng.</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl">
+                    <h4 class="text-blue-400 font-bold mb-2">3. Render</h4>
+                    <p class="text-xs">Tính lại tổng tiền & vẽ lại giao diện (DOM).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Thanh toán VietQR -->
+    <section class="slide" id="slide-6">
+        <div class="flex flex-col items-center">
+            <h2 class="text-5xl font-bold mb-8">Thanh toán <span class="text-blue-600">VietQR</span></h2>
+            <div class="grid grid-cols-2 gap-12 items-center">
+                <div class="glass-card">
+                    <h3 class="text-xl font-bold mb-4">Tích hợp API img.vietqr.io</h3>
+                    <p class="text-slate-400 text-sm mb-4">Hệ thống tự động tạo URL chứa:</p>
+                    <ul class="text-sm space-y-2 text-blue-400">
+                        <li><i class="fa-solid fa-check mr-2"></i> ID Ngân hàng</li>
+                        <li><i class="fa-solid fa-check mr-2"></i> Số tài khoản</li>
+                        <li><i class="fa-solid fa-check mr-2"></i> Số tiền (Tổng giỏ hàng)</li>
+                        <li><i class="fa-solid fa-check mr-2"></i> Nội dung chuyển khoản</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-4 inline-block rounded-2xl shadow-2xl">
+                        <i class="fa-solid fa-qrcode text-[150px] text-slate-900"></i>
+                    </div>
+                    <p class="mt-4 text-xs text-slate-500 italic">Quét để trải nghiệm thanh toán 4.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Cấu trúc Dữ liệu -->
+    <section class="slide" id="slide-7">
+        <h2 class="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-6 uppercase">03. Cấu trúc dữ liệu</h2>
+        <div class="grid grid-cols-2 gap-8">
+            <pre class="glass-card text-blue-400 text-xs overflow-hidden leading-relaxed">
+{
+  "id": 1,
+  "categoryId": "electronics",
+  "name": "Sony WH-1000XM5",
+  "price": 8490000,
+  "brand": "Sony",
+  "image": "url_to_image"
+}
+            </pre>
+            <div class="flex flex-col justify-center">
+                <p class="text-slate-400">Dữ liệu được tổ chức dưới dạng <strong>Array of Objects</strong>, cho phép:</p>
+                <ul class="space-y-4 mt-4">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-blue-600 text-[8px]"></i> Lọc theo ngành hàng (filter)</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-blue-600 text-[8px]"></i> Sắp xếp theo giá (sort)</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-blue-600 text-[8px]"></i> Tìm kiếm mờ (includes)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: 6 Nhóm ngành hàng -->
+    <section class="slide" id="slide-8">
+        <h2 class="text-4xl font-bold mb-12 text-center uppercase tracking-widest">Đa dạng Ngành hàng</h2>
+        <div class="grid grid-cols-3 gap-6">
+            <div class="glass-card text-center p-6 border-b-4 border-blue-500">
+                <i class="fa-solid fa-laptop text-2xl mb-4"></i>
+                <h4 class="font-bold">Điện tử</h4>
+            </div>
+            <div class="glass-card text-center p-6 border-b-4 border-pink-500">
+                <i class="fa-solid fa-shirt text-2xl mb-4"></i>
+                <h4 class="font-bold">Thời trang</h4>
+            </div>
+            <div class="glass-card text-center p-6 border-b-4 border-orange-500">
+                <i class="fa-solid fa-watch text-2xl mb-4"></i>
+                <h4 class="font-bold">Phụ kiện</h4>
+            </div>
+            <div class="glass-card text-center p-6 border-b-4 border-purple-500">
+                <i class="fa-solid fa-pump-soap text-2xl mb-4"></i>
+                <h4 class="font-bold">Mỹ phẩm</h4>
+            </div>
+            <div class="glass-card text-center p-6 border-b-4 border-green-500">
+                <i class="fa-solid fa-book text-2xl mb-4"></i>
+                <h4 class="font-bold">Sách</h4>
+            </div>
+            <div class="glass-card text-center p-6 border-b-4 border-red-500">
+                <i class="fa-solid fa-basketball text-2xl mb-4"></i>
+                <h4 class="font-bold">Thể thao</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Hiệu năng -->
+    <section class="slide" id="slide-9">
+        <div class="grid grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-8 italic">Tốc độ &<br>Trải nghiệm</h2>
+                <p class="text-slate-400">Chúng tôi không sử dụng các Framework nặng nề. NEUSHOP đạt điểm tối ưu trên Google Lighthouse.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="w-full bg-slate-800 h-4 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-[98%]"></div>
+                </div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                    <span>Performance</span>
+                    <span>98/100</span>
+                </div>
+                <div class="w-full bg-slate-800 h-4 rounded-full overflow-hidden">
+                    <div class="bg-blue-500 h-full w-[100%]"></div>
+                </div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                    <span>SEO</span>
+                    <span>100/100</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Tương lai -->
+    <section class="slide" id="slide-10">
+        <h2 class="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-6 uppercase">04. Lộ trình phát triển</h2>
+        <div class="flex justify-between relative mt-20">
+            <div class="absolute top-0 left-0 w-full h-1 bg-slate-700 -z-10 mt-6"></div>
+            <div class="text-center w-1/4">
+                <div class="w-12 h-12 bg-blue-600 rounded-full mx-auto flex items-center justify-center font-bold mb-4">1</div>
+                <h4 class="font-bold">Giai đoạn 1</h4>
+                <p class="text-xs text-slate-500 px-4">Tích hợp tài khoản người dùng & LocalStorage</p>
+            </div>
+            <div class="text-center w-1/4">
+                <div class="w-12 h-12 bg-slate-700 rounded-full mx-auto flex items-center justify-center font-bold mb-4 text-slate-500">2</div>
+                <h4 class="font-bold">Giai đoạn 2</h4>
+                <p class="text-xs text-slate-500 px-4">Xây dựng Admin Dashboard quản lý kho hàng</p>
+            </div>
+            <div class="text-center w-1/4">
+                <div class="w-12 h-12 bg-slate-700 rounded-full mx-auto flex items-center justify-center font-bold mb-4 text-slate-500">3</div>
+                <h4 class="font-bold">Giai đoạn 3</h4>
+                <p class="text-xs text-slate-500 px-4">Tích hợp Chatbot AI tư vấn sản phẩm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: Tại sao chọn -->
+    <section class="slide" id="slide-11">
+        <h2 class="text-4xl font-bold mb-12">Tại sao chọn NEUSHOP?</h2>
+        <div class="grid grid-cols-2 gap-8">
+            <div class="glass-card flex items-center gap-6">
+                <div class="text-4xl text-blue-500"><i class="fa-solid fa-lock"></i></div>
+                <div>
+                    <h4 class="font-bold">Bảo mật thanh toán</h4>
+                    <p class="text-sm text-slate-400">Không lưu trữ thẻ, thanh toán qua App Bank</p>
+                </div>
+            </div>
+            <div class="glass-card flex items-center gap-6">
+                <div class="text-4xl text-green-500"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div>
+                    <h4 class="font-bold">Giao diện di động</h4>
+                    <p class="text-sm text-slate-400">Tối ưu 100% cho trải nghiệm vuốt chạm</p>
+                </div>
+            </div>
+            <div class="glass-card flex items-center gap-6">
+                <div class="text-4xl text-purple-500"><i class="fa-solid fa-gauge-high"></i></div>
+                <div>
+                    <h4 class="font-bold">Tốc độ cực nhanh</h4>
+                    <p class="text-sm text-slate-400">Tải trang dưới 1 giây</p>
+                </div>
+            </div>
+            <div class="glass-card flex items-center gap-6">
+                <div class="text-4xl text-orange-500"><i class="fa-solid fa-headset"></i></div>
+                <div>
+                    <h4 class="font-bold">Hỗ trợ 24/7</h4>
+                    <p class="text-sm text-slate-400">Hệ thống phản hồi tự động thông minh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Kết thúc -->
+    <section class="slide" id="slide-12">
+        <div class="text-center">
+            <h1 class="text-7xl font-bold mb-8">THANK YOU!</h1>
+            <p class="text-2xl text-blue-400 mb-12">Cảm ơn quý khách đã lắng nghe bài thuyết trình</p>
+            <div class="inline-flex gap-8 text-slate-400">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> <a href="https://ryutran117.github.io/demo/NEUSHOP.html" target="_blank" rel="noopener noreferrer" class="hover:underline">www.neushop.vn</a></div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-envelope"></i> admin@neushop.vn</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="control-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        // Tự động đếm số lượng slide hiện có trong DOM
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            if (n > totalSlides) currentSlide = 1;
+            else if (n < 1) currentSlide = totalSlides;
+            else currentSlide = n;
+
+            // Ẩn tất cả slide
+            slides.forEach(s => s.classList.remove('active'));
+            
+            // Hiển thị slide hiện tại dựa trên index (n-1)
+            const targetSlide = slides[currentSlide - 1];
+            if (targetSlide) {
+                targetSlide.classList.add('active');
+            }
+
+            // Cập nhật thanh tiến trình và số trang
+            document.getElementById('progress').style.width = `${(currentSlide / totalSlides) * 100}%`;
+            document.getElementById('slideNum').innerText = `${currentSlide} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Điều khiển bằng bàn phím
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+                e.preventDefault();
+                nextSlide();
+            }
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Khởi tạo trạng thái ban đầu khi window đã load
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+</body>
+</html>

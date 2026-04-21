@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEUSHOP - Cửa Hàng Hiện Đại</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Thẻ meta SEO -->
+    <meta name="description" content="Khám phá các sản phẩm hiện đại với giá ưu đãi tại NEUSHOP.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome cho Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Tùy chỉnh -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="ShopVip.html"><span>NEU</span>SHOP</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="NEUSHOP.html" class="active">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="category.html#categories">Danh mục</a></li>
+                    <li><a href="NEUSHOP.html#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm...">
+                    <button aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="cart-icon" id="cartBtn" aria-label="Giỏ hàng">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Khám phá xu hướng mới nhất</h1>
+                    <p>Giảm giá lên đến <strong>50%</strong> cho các bộ sưu tập mùa hè.</p>
+                    <a href="category.html#products" class="btn btn-primary">Mua ngay</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4 class="logo-text"><span>NEU</span>SHOP</h4>
+                <p>Nâng tầm phong cách, định hình xu hướng. Mang đến trải nghiệm mua sắm đẳng cấp.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên kết</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Liên hệ</h4>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-envelope"></i> hotro@shopvip.vn</p>
+                    <p><i class="fa-solid fa-phone"></i> 1900 1234</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Mạng xã hội</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NEUSHOP. Tất cả các quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- Panel Giỏ hàng -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Giỏ hàng của bạn</h3>
+            <button class="close-btn" id="closeCartBtn" aria-label="Đóng giỏ hàng"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items giỏ hàng hiển thị ở đây -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Tổng tiền:</span>
+                <span id="cartTotal">0 ₫</span>
+            </div>
+            <button class="btn btn-primary btn-block">Tiến hành thanh toán</button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
